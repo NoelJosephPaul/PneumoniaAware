@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PneumoniaAware</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        /* CSS for the prediction result */
+        #prediction-result {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: white; /* Initially set to white */
+        }
+        
+        #prediction-result p {
+            font-size: 18px;
+            color: #333;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <form id="upload-form"> <!-- Added ID to form -->
+    <div class="container">
+        <h1>PneumoniaAware</h1>
+        <div id="drop-area" class="drop-area">
+            <input type="file" name="file" accept="image/*" id="file-input" class="file-input">
+            <label for="file-input">Drag & Drop your Chest X-Ray image here, or <a href="#" id="browse-link">browse</a> to select one.</label>
+            <div id="image-preview"></div> <!-- Added image preview div -->
+        </div>
+        <button type="submit" id="predict-btn">Predict</button>
+        <div id="image-preview"></div> <!-- Added image preview div -->
+        <div id="prediction-result">
+            <!-- Prediction result will be displayed here -->
+        </div>
+    </div>
+    </form>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
